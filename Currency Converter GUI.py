@@ -1,8 +1,6 @@
 import json
 import requests
-from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
+from tkinter import Label,StringVar,IntVar,Entry,Tk,Button,messagebox,ttk
 res=json.loads((requests.get("https://api.exchangerate-api.com/v4/latest/INR")).text)
 
 win=Tk()
@@ -36,18 +34,12 @@ e1=Entry(width=23,textvariable=a1).grid(row=4,column=1)
 e2_ans=Entry(win,textvariable=a2,width=23,state="readonly").grid(row=4,column=4)
 
 
-#for i,j in res["rates"].items():
-    #print(i,j)
-
-
 def convert():
     value=a1.get()
     a,b=c1_var.get(),c2_var.get()
     a2.set(float(value)*float(res["rates"][b])/float(res["rates"][a]))
 
 cConvert=Button(text="convert",command=convert,width=20,bg="#D0CD75").grid(row=5,column=1,columnspan=4)
-
-
 
 
 win.mainloop()
