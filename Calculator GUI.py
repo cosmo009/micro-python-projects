@@ -1,8 +1,5 @@
-from tkinter import *
-from tkinter import messagebox
+from tkinter import Label,Tk,Entry,END,Button,messagebox
 import re
-
-
 
 t=Tk()
 t.title("Calculator")
@@ -47,9 +44,12 @@ def searchOP():
         solution.delete(0,END)
         solution.insert(0,"ERROR")
     else: 
-        inputText=eval(inDialog.get())
-        solution.delete(0,END)
-        solution.insert(0,inputText)
+        try:
+            inputText=eval(inDialog.get())
+            solution.delete(0,END)
+            solution.insert(0,inputText)
+        except ZeroDivisionError:
+            messagebox.showerror("INVALID REQUEST","Cannot divide by zero")
         
             
 
@@ -60,19 +60,7 @@ bEqual2.grid(row=5,column=3)
 bDecimal=Button(text=".",width="10",height="1",bg="#575050",fg="#fff",command=lambda:outDialog("."))
 bDecimal.grid(row=5,column=2)
 
-#HISTORY BUTTON
-'''
-historyList=[]
-def history():
-     historyList.append(f"{inDalog.get()}={solution.get()}")
 
-
-#bHist=Button(text="↩",width="7",height="1",bg="#4e4646",fg="#fff",command=)
-#bHist.grid(row=3,column=3)
-
-histLabel=Label(text=historyList,)
-histLabel.grid(row=6,column=0,columnspan=5,rowspan=10)
-'''
 #OFF Button
 
 bOFF=Button(text="  OFF",width="7",height="1",bg="#ea813a",fg="#fff",command=t.destroy)
@@ -114,7 +102,6 @@ b9.grid(row=4,column=2)
 #OPERATORS
 def add(a,b):
     return solution.insert(0,a+b)
-
 bAdd=Button(text="+",width="7",height="1",bg="#575050",fg="#fff",command=lambda:outDialog("+"))
 bAdd.grid(row=2,column=4)
 
@@ -135,10 +122,3 @@ bDiv.grid(row=5,column=4)
 
 t.mainloop()
 
-
-
-
-
-
-#name age email GUI se lena hai backend mein store karna hai and uska table banana hai
-#TREE VIEW se table banega 
