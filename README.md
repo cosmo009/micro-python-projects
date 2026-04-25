@@ -1,17 +1,8 @@
 
-# Micro Python Projects
-
-A bunch of beginner python projects which I have completed. I will be improvising them as I learn further.
-
-Beginners can refer and get ideas on which projects to aim next.🎯
+# This branch is a new beginning to a 100 projects roadmap
 
 
 
-
-
-
-
-Uploading and verifying these to ROADMAP.sh
-https://roadmap.sh/projects/number-guessing-game
-
-
+I am planning on doing this to all the languages i learnt in order
+Beginning with python followed by C and java. 
+Once i complete these 100 projects for each language i will do a big project comprising of eveything i learnt
